@@ -1,0 +1,63 @@
+import express from 'express'
+import cors from 'cors'
+import helmet from 'helmet'
+import rateLimit from 'express-rate-limit'
+import { config } from '../config/env.js'
+import authRoutes from '../routes/auth.js'
+import adminRoutes from '../routes/admin.js'
+import contactRoutes from '../routes/contact.js'
+import newsletterRoutes from '../routes/newsletter.js'
+import chatRoutes from '../routes/chat.js'
+
+const app = express()
+
+// Security
+app.use(helmet())
+app.use(cors({
+  origin: config.corsOrigins,
+  credentials: true,
+}))
+
+// Rate limiting
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100,
+  standardHeaders: true,
+  legacyHeaders: false,
+})
+app.use('/api/', limiter)
+
+// Body parsing
+app.use(express.json({ limit: '10mb' }))
+app.use(express.urlencoded({ extended: true }))
+
+// Routes
+app.use('/api/auth', authRoutes)
+app.use('/api/admin', adminRoutes)
+app.use('/api/contact', contactRoutes)
+app.use('/api/newsletter', newsletterRoutes)
+app.use('/api/chat', chatRoutes)
+
+// Health check
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'ok', timestamp: new Date().toISOString() })
+})
+
+// Error handler
+app.use((err, req, res, next) => {
+  console.error('Server Error:', err)
+  res.status(err.status || 500).json({
+    error: err.message || 'Internal server error',
+  })
+})
+
+// Start server for local development (not triggered on Vercel)
+if (process.env.VERCEL !== '1') {
+  const PORT = config.port || 3000
+  app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`)
+    console.log(`Health check: http://localhost:${PORT}/api/health`)
+  })
+}
+
+export default app

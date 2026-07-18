@@ -11,7 +11,7 @@ export const config = {
   port: process.env.PORT || 3000,
   supabaseUrl: process.env.VITE_SUPABASE_URL,
   supabaseAnonKey: process.env.VITE_SUPABASE_ANON_KEY,
-  supabaseServiceRole: process.env.SUPABASE_SERVICE_ROLE,
+  supabaseServiceRole: process.env.VITE_SUPABASE_SERVICE_ROLE,
   groqApiKey: process.env.GROQ_API_KEY,
   jwtSecret: process.env.JWT_SECRET,
   corsOrigins: process.env.CORS_ORIGINS?.split(',') || ['*'],

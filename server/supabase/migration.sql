@@ -354,6 +354,8 @@ DROP POLICY IF EXISTS "Admin full access" ON public.project_images;
 DROP POLICY IF EXISTS "Admin full access" ON public.skills;
 DROP POLICY IF EXISTS "Admin full access" ON public.team;
 DROP POLICY IF EXISTS "Admin full access" ON public.testimonials;
+DROP POLICY IF EXISTS "Allow public insert" ON public.messages;
+DROP POLICY IF EXISTS "Allow public insert" ON public.newsletter;
 DROP POLICY IF EXISTS "Admin full access" ON public.messages;
 DROP POLICY IF EXISTS "Admin full access" ON public.newsletter;
 DROP POLICY IF EXISTS "Admin full access" ON public.social_links;
@@ -378,6 +380,10 @@ CREATE POLICY "Public read access" ON public.categories FOR SELECT USING (true);
 CREATE POLICY "Public read access" ON public.settings FOR SELECT USING (true);
 CREATE POLICY "Public read access" ON public.seo FOR SELECT USING (true);
 CREATE POLICY "Public read access" ON public.chatbot_config FOR SELECT USING (true);
+
+-- Public insert for contact form and newsletter (unauthenticated users)
+CREATE POLICY "Allow public insert" ON public.messages FOR INSERT TO anon WITH CHECK (true);
+CREATE POLICY "Allow public insert" ON public.newsletter FOR INSERT TO anon WITH CHECK (true);
 
 -- Admin full access (authenticated users only)
 CREATE POLICY "Admin full access" ON public.hero FOR ALL USING (auth.role() = 'authenticated');

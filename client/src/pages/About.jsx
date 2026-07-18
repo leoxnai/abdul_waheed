@@ -181,8 +181,9 @@ export default function About() {
           {activeTab === 'education' && (
             <div className="space-y-6">
               {[
-                { degree: 'Bachelor of Fine Arts', school: 'National College of Arts', year: '2014-2018' },
-                { degree: 'Diploma in Graphic Design', school: 'Design Academy', year: '2013-2014' },
+                { degree: 'Matriculation', school: 'Government High school', year: '2021 – 2022' },
+                { degree: 'Intermediate', school: 'Quaid-e-Azam Collage Gojra', year: '2023 – 2024' },
+                { degree: 'BSCS(3rd semester)', school: '(LIMS) Gojra', year: '2025 – Present' },
               ].map((edu, i) => (
                 <SectionReveal key={i} delay={i * 0.1}>
                   <div className="p-6 rounded-2xl bg-card border border-white/5">

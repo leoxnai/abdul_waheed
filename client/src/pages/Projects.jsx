@@ -12,11 +12,11 @@ function ProjectCard({ project }) {
   return (
     <Link to={linkTo}>
       <motion.div
-        whileHover={{ y: -8 }}
-        className="group relative rounded-2xl overflow-hidden bg-card border border-white/5 min-h-[280px]"
+        whileHover={{ y: -8, scale: 1.01 }}
+        className="group relative min-h-[280px] overflow-hidden rounded-[1.75rem] border border-[#EFE5DA] bg-white p-3 shadow-[0_24px_70px_-40px_rgba(31,31,31,0.3)]"
       >
-        <div className="aspect-[4/3] overflow-hidden bg-card relative">
-          <div className="absolute inset-0 flex items-center justify-center text-gray">
+        <div className="relative aspect-[4/3] overflow-hidden rounded-[1.25rem] bg-[#FFF2E8]">
+          <div className="absolute inset-0 flex items-center justify-center text-[#9CA3AF]">
             <div className="flex flex-col items-center space-y-2">
               <FiImage size={36} />
               <span className="text-xs">No image</span>
@@ -26,21 +26,19 @@ function ProjectCard({ project }) {
             <img
               src={project.thumbnail_url}
               alt={project.title}
-              className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 z-10"
+              className="absolute inset-0 z-10 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
               loading="lazy"
               onError={(e) => { e.target.style.display = 'none' }}
             />
           )}
         </div>
 
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-
-        <div className="absolute bottom-0 left-0 right-0 p-5 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-          <span className="inline-block px-3 py-1 rounded-full bg-primary/20 text-primary text-xs font-semibold mb-2">
+        <div className="relative p-4 pt-5">
+          <span className="mb-2 inline-flex rounded-full bg-[#FFF2E8] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.25em] text-primary">
             {project.category || 'Uncategorized'}
           </span>
-          <h3 className="text-lg font-heading font-bold text-white break-words pr-2">{project.title}</h3>
-          <div className="flex items-center space-x-1 text-primary text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <h3 className="break-words pr-2 font-heading text-lg font-bold text-[#1F1F1F]">{project.title}</h3>
+          <div className="mt-3 flex items-center space-x-2 text-sm font-semibold text-primary">
             <span>Read More</span>
             <FiArrowRight />
           </div>
@@ -78,45 +76,45 @@ export default function Projects() {
         <title>Portfolio | Abdul Waheed - Graphic Designer</title>
       </Helmet>
 
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative overflow-hidden pb-20 pt-32">
         <div className="blob blob-1" />
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionReveal>
-            <div className="text-center max-w-3xl mx-auto mb-12">
-              <span className="text-primary text-sm font-semibold tracking-widest uppercase">Portfolio</span>
-              <h1 className="text-4xl md:text-6xl font-heading font-bold mt-4 mb-6">
+            <div className="mx-auto mb-12 max-w-3xl text-center">
+              <span className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">Portfolio</span>
+              <h1 className="mt-4 mb-6 font-heading text-4xl font-bold text-[#1F1F1F] md:text-6xl">
                 My <span className="text-gradient">Work</span>
               </h1>
-              <p className="text-gray leading-relaxed">
+              <p className="text-lg leading-8 text-[#4B5563]">
                 A showcase of selected projects that demonstrate my expertise in brand identity,
-                visual design, and creative direction.
+                digital product design, and modern user experience.
               </p>
             </div>
           </SectionReveal>
 
           {/* Search & Filter */}
           <SectionReveal>
-            <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
+            <div className="mb-12 flex flex-col items-center justify-between gap-6 rounded-[1.75rem] border border-[#EFE5DA] bg-white/80 p-5 shadow-[0_24px_70px_-40px_rgba(31,31,31,0.25)] md:flex-row md:p-6">
               <div className="relative w-full md:w-72">
-                <FiSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray" />
+                <FiSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-[#9CA3AF]" />
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search projects..."
-                  className="w-full pl-12 pr-4 py-3 bg-card border border-white/10 rounded-xl text-white text-sm focus:outline-none focus:border-primary transition-colors"
+                  className="w-full rounded-full border border-[#EFE5DA] bg-[#FFF8F2] py-3 pl-12 pr-4 text-sm text-[#1F1F1F] transition-colors focus:border-primary focus:outline-none"
                 />
               </div>
 
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap justify-center gap-2">
                 {allCategories.map((category) => (
                   <button
                     key={category}
                     onClick={() => setActiveCategory(category)}
-                    className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                    className={`rounded-full px-5 py-2 text-sm font-medium transition-all duration-300 ${
                       activeCategory === category
-                        ? 'bg-gradient-primary text-background'
-                        : 'bg-white/5 text-gray hover:text-white border border-white/10'
+                        ? 'bg-gradient-primary text-[#FFF8F2] shadow-[0_12px_32px_-18px_rgba(244,122,32,0.7)]'
+                        : 'border border-[#EFE5DA] bg-white text-[#4B5563] hover:border-primary/30 hover:text-[#1F1F1F]'
                     }`}
                   >
                     {category}
@@ -148,8 +146,8 @@ export default function Projects() {
           </AnimatePresence>
 
           {filteredProjects.length === 0 && (
-            <div className="text-center py-20">
-              <p className="text-gray text-lg">No projects found.</p>
+            <div className="rounded-[1.75rem] border border-[#EFE5DA] bg-white/80 py-20 text-center shadow-[0_24px_70px_-40px_rgba(31,31,31,0.25)]">
+              <p className="text-lg text-[#4B5563]">No projects found.</p>
             </div>
           )}
         </div>

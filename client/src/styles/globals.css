@@ -1,4 +1,4 @@
-@import url('https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -16,54 +16,60 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #050505;
-  color: #FFFFFF;
+  background-color: #FFF8F2;
+  color: #1F2937;
   overflow-x: hidden;
 }
 
 ::selection {
-  background: #00E676;
-  color: #050505;
+  background: #F47A20;
+  color: #FFF8F2;
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #050505;
+  background: #FFF8F2;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #00E676;
-  border-radius: 3px;
+  background: linear-gradient(135deg, #F47A20, #FF9A3D);
+  border-radius: 999px;
 }
 
 .glass {
-  background: rgba(17, 17, 17, 0.7);
+  background: rgba(255, 248, 242, 0.8);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(244, 122, 32, 0.12);
 }
 
-.glass-light {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(239, 229, 218, 0.9);
+}
+
+.panel {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(255, 242, 232, 0.85));
+  border: 1px solid rgba(239, 229, 218, 0.9);
+  box-shadow: 0 20px 60px -24px rgba(31, 31, 31, 0.16);
 }
 
 .gradient-border {
   position: relative;
-  border-radius: 16px;
+  border-radius: 20px;
 }
 
 .gradient-border::before {
   content: '';
   position: absolute;
   inset: -1px;
-  border-radius: 17px;
-  background: linear-gradient(135deg, #00E676, #00C853, transparent, transparent);
+  border-radius: 21px;
+  background: linear-gradient(135deg, rgba(244, 122, 32, 0.35), rgba(255, 154, 61, 0.2), transparent, transparent);
   z-index: -1;
   opacity: 0.5;
   transition: opacity 0.3s ease;
@@ -74,70 +80,83 @@ body {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #00E676, #00C853);
+  background: linear-gradient(135deg, #F47A20, #FF9A3D);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.glow-effect {
-  box-shadow: 0 0 30px rgba(0, 230, 118, 0.15),
-              0 0 60px rgba(0, 230, 118, 0.05);
-}
-
-.glow-text {
-  text-shadow: 0 0 40px rgba(0, 230, 118, 0.3);
+.soft-ring {
+  box-shadow: 0 0 0 1px rgba(244, 122, 32, 0.14), 0 15px 45px -26px rgba(244, 122, 32, 0.38);
 }
 
 .animated-grid {
-  background-image: 
-    linear-gradient(rgba(0, 230, 118, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 230, 118, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
+  background-image: linear-gradient(rgba(244, 122, 32, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(244, 122, 32, 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
 }
 
 .blob {
   position: absolute;
-  width: 400px;
-  height: 400px;
+  width: 420px;
+  height: 420px;
   border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.15;
+  filter: blur(90px);
+  opacity: 0.18;
   pointer-events: none;
 }
 
 .blob-1 {
-  background: #00E676;
-  top: -100px;
-  right: -100px;
+  background: #F47A20;
+  top: -120px;
+  right: -120px;
   animation: blobMove 20s ease-in-out infinite;
 }
 
 .blob-2 {
-  background: #00C853;
-  bottom: -100px;
-  left: -100px;
-  animation: blobMove 25s ease-in-out infinite reverse;
+  background: #FF9A3D;
+  bottom: -140px;
+  left: -140px;
+  animation: blobMove 24s ease-in-out infinite reverse;
 }
 
 @keyframes blobMove {
   0%, 100% { transform: translate(0, 0) scale(1); }
-  25% { transform: translate(50px, -50px) scale(1.1); }
-  50% { transform: translate(-30px, 30px) scale(0.9); }
-  75% { transform: translate(40px, 40px) scale(1.05); }
+  25% { transform: translate(40px, -40px) scale(1.06); }
+  50% { transform: translate(-24px, 28px) scale(0.96); }
+  75% { transform: translate(30px, 34px) scale(1.03); }
 }
 
 .section-padding {
-  padding: 100px 20px;
+  padding: 110px 20px;
+}
+
+input,
+textarea,
+select {
+  color: #1F2937;
+}
+
+input::placeholder,
+textarea::placeholder,
+select::placeholder {
+  color: #9CA3AF;
+}
+
+.bg-card .text-white,
+.bg-background .text-white,
+.bg-white .text-white,
+.bg-card.text-white,
+.bg-background.text-white,
+.bg-white.text-white {
+  color: #1F2937 !important;
 }
 
 @media (max-width: 768px) {
   .section-padding {
-    padding: 60px 16px;
+    padding: 72px 16px;
   }
 }
 
-/* PDF Viewer Styles */
 .pdf-page canvas {
   display: block;
   max-width: 100% !important;
@@ -163,7 +182,6 @@ body {
   }
 }
 
-/* Hide scrollbar for toolbar */
 .scrollbar-none {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -172,25 +190,18 @@ body {
   display: none;
 }
 
-/* Shimmer animation for PDF loading skeletons */
 .shimmer {
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.06) 50%,
-    transparent 100%
-  );
+  background: linear-gradient(90deg, transparent 0%, rgba(244, 122, 32, 0.16) 50%, transparent 100%);
   background-size: 200% 100%;
   animation: shimmer 2s linear infinite;
 }
 
-/* Swiper customization */
 .swiper-pagination-bullet {
-  background: #A0A0A0 !important;
-  opacity: 0.5 !important;
+  background: #D1D5DB !important;
+  opacity: 0.7 !important;
 }
 
 .swiper-pagination-bullet-active {
-  background: #00E676 !important;
+  background: #F47A20 !important;
   opacity: 1 !important;
 }

@@ -63,7 +63,7 @@ export default function AdminServices() {
 
   const columns = [
     { key: 'title', label: 'Title' },
-    { key: 'status', label: 'Status', render: (v) => <span className={`px-2 py-1 rounded-full text-xs ${v === 'published' ? 'bg-green-500/10 text-green-400' : 'bg-yellow-500/10 text-yellow-400'}`}>{v}</span> },
+    { key: 'status', label: 'Status', render: (v) => <span className={`px-2 py-1 rounded-full text-xs ${v === 'published' ? 'bg-[#FFF2E8] text-[#F47A20]' : 'bg-[#FFF8F2] text-[#6B7280]'}`}>{v}</span> },
     { key: 'order', label: 'Order' },
   ]
 

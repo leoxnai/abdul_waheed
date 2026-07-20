@@ -14,8 +14,8 @@ export default function AdminLayout() {
 
   if (authState === 'loading') {
     return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
+      <div className="min-h-screen flex items-center justify-center bg-[linear-gradient(135deg,#FFF8F2_0%,#FFF2E8_100%)]">
+        <div className="h-8 w-8 animate-spin rounded-full border-2 border-primary border-t-transparent" />
       </div>
     )
   }
@@ -25,9 +25,9 @@ export default function AdminLayout() {
   }
 
   return (
-    <div className="min-h-screen bg-background flex">
+    <div className="min-h-screen flex bg-[linear-gradient(135deg,#FFF8F2_0%,#FFF2E8_100%)]">
       <AdminSidebar />
-      <div className="flex-1 ml-64">
+      <div className="ml-64 flex-1">
         <AdminHeader />
         <main className="p-6 pt-24">
           <Outlet />

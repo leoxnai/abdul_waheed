@@ -43,13 +43,13 @@ export default function DataTable({
       {/* Toolbar */}
       <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
         <div className="relative w-full md:w-64">
-          <FiSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray" size={16} />
+          <FiSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-[#6B7280]" size={16} />
           <input
             type="text"
             value={search}
             onChange={(e) => { setSearch(e.target.value); setCurrentPage(1) }}
             placeholder={searchPlaceholder}
-            className="w-full pl-10 pr-4 py-2.5 bg-card border border-white/10 rounded-xl text-white text-sm focus:outline-none focus:border-primary transition-colors placeholder:text-gray/50"
+            className="w-full pl-10 pr-4 py-2.5 bg-card border border-white/10 rounded-xl text-[#1F2937] text-sm focus:outline-none focus:border-primary transition-colors placeholder:text-[#9CA3AF]"
           />
         </div>
 
@@ -77,11 +77,11 @@ export default function DataTable({
                 />
               </th>
               {columns.map((col) => (
-                <th key={col.key} className="px-4 py-3 text-left text-xs font-semibold text-gray uppercase tracking-wider">
+                <th key={col.key} className="px-4 py-3 text-left text-xs font-semibold text-[#4B5563] uppercase tracking-wider">
                   {col.label}
                 </th>
               ))}
-              <th className="px-4 py-3 text-right text-xs font-semibold text-gray uppercase tracking-wider">Actions</th>
+              <th className="px-4 py-3 text-right text-xs font-semibold text-[#4B5563] uppercase tracking-wider">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -102,21 +102,21 @@ export default function DataTable({
                   />
                 </td>
                 {columns.map((col) => (
-                  <td key={col.key} className="px-4 py-3 text-sm text-white">
-                    {col.render ? col.render(row[col.key], row) : row[col.key] || <span className="text-gray-600 italic text-xs">—</span>}
+                  <td key={col.key} className="px-4 py-3 text-sm text-[#1F2937]">
+                    {col.render ? col.render(row[col.key], row) : row[col.key] || <span className="text-[#6B7280] italic text-xs">—</span>}
                   </td>
                 ))}
                 <td className="px-4 py-3 text-right">
                   <div className="flex items-center justify-end space-x-2">
                     <button
                       onClick={() => onEdit(row)}
-                      className="p-2 rounded-lg hover:bg-primary/10 text-gray hover:text-primary transition-all duration-300"
+                      className="p-2 rounded-lg hover:bg-primary/10 text-[#4B5563] hover:text-primary transition-all duration-300"
                     >
                       <FiEdit2 size={15} />
                     </button>
                     <button
                       onClick={() => onDelete(row)}
-                      className="p-2 rounded-lg hover:bg-red-500/10 text-gray hover:text-red-400 transition-all duration-300"
+                      className="p-2 rounded-lg hover:bg-red-500/10 text-[#4B5563] hover:text-red-400 transition-all duration-300"
                     >
                       <FiTrash2 size={15} />
                     </button>
@@ -126,7 +126,7 @@ export default function DataTable({
             ))}
             {paginated.length === 0 && (
               <tr>
-                <td colSpan={columns.length + 2} className="px-4 py-12 text-center text-gray">
+                <td colSpan={columns.length + 2} className="px-4 py-12 text-center text-[#4B5563]">
                   No data found
                 </td>
               </tr>
@@ -138,7 +138,7 @@ export default function DataTable({
       {/* Pagination */}
       {totalPages > 1 && (
         <div className="flex items-center justify-between mt-4">
-          <p className="text-sm text-gray">
+          <p className="text-sm text-[#4B5563]">
             Page {currentPage} of {totalPages}
           </p>
           <div className="flex space-x-2">

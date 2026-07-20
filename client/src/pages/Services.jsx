@@ -40,7 +40,7 @@ export default function Services() {
               <h1 className="text-4xl md:text-6xl font-heading font-bold mt-4 mb-6">
                 What I <span className="text-gradient">Create</span>
               </h1>
-              <p className="text-gray leading-relaxed">
+              <p className="leading-relaxed text-[#4B5563]">
                 From brand identity to digital design, I offer a comprehensive range of design services
                 to help your business stand out and succeed.
               </p>
@@ -64,7 +64,7 @@ export default function Services() {
                       <h3 className="text-2xl font-heading font-bold mb-4 group-hover:text-gradient transition-all duration-500 break-words">
                         {service.title}
                       </h3>
-                      <p className="text-gray leading-relaxed mb-6 break-words">{service.description}</p>
+                      <p className="mb-6 break-words leading-relaxed text-[#4B5563]">{service.description}</p>
                       <div className="flex items-center space-x-2 text-primary text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         <span>Learn More</span>
                         <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
@@ -104,7 +104,7 @@ export default function Services() {
                     <span className="text-2xl font-heading font-bold text-gradient">{item.step}</span>
                   </div>
                   <h3 className="text-xl font-heading font-bold mb-2">{item.title}</h3>
-                  <p className="text-gray text-sm">{item.desc}</p>
+                  <p className="text-sm text-[#4B5563]">{item.desc}</p>
                 </div>
               </SectionReveal>
             ))}

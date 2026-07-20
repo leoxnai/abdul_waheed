@@ -40,7 +40,7 @@ function PDFError({ pdfUrl }) {
         <FiImage className="text-red-400" size={32} />
       </div>
       <h3 className="text-xl font-heading font-bold mb-2">Unable to load PDF</h3>
-      <p className="text-gray text-center max-w-md mb-6">
+      <p className="text-center max-w-md mb-6 text-[#4B5563]">
         The PDF could not be loaded. It may be unavailable or the URL may be invalid.
       </p>
       <div className="flex items-center space-x-4">
@@ -110,7 +110,7 @@ function PDFToolbar({
           >
             <FiZoomOut size={16} />
           </button>
-          <span className="text-sm font-mono min-w-[48px] text-center text-white select-none">
+          <span className="text-sm font-mono min-w-[48px] text-center text-[#1F2937] select-none">
             {Math.round(scale * 100)}%
           </span>
           <button
@@ -124,7 +124,7 @@ function PDFToolbar({
           <div className="w-px h-5 bg-white/10 mx-1" />
           <button
             onClick={fitWidth}
-            className="p-1.5 rounded-md hover:bg-white/10 text-gray hover:text-white transition-all"
+            className="p-1.5 rounded-md hover:bg-[#FFF2E8] text-[#4B5563] hover:text-[#1F2937] transition-all"
             title="Fit Width"
             aria-label="Fit width"
           >
@@ -151,12 +151,12 @@ function PDFToolbar({
                 const val = Math.min(numPages, Math.max(1, parseInt(e.target.value) || 1))
                 setPageNumber(val)
               }}
-              className="w-10 bg-transparent text-center text-sm text-white outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+              className="w-10 bg-transparent text-center text-sm text-[#1F2937] outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
               min={1}
               max={numPages}
               aria-label="Current page number"
             />
-            <span className="text-xs text-gray select-none">/ {numPages}</span>
+            <span className="text-xs text-[#4B5563] select-none">/ {numPages}</span>
             <button
               onClick={() => setPageNumber(Math.min(numPages, pageNumber + 1))}
               disabled={pageNumber >= numPages}
@@ -215,7 +215,7 @@ function ProjectHero({ project }) {
           <span>/</span>
           <Link to="/projects" className="hover:text-primary transition-colors">Projects</Link>
           <span>/</span>
-          <span className="text-white">{project.title}</span>
+          <span className="text-[#1F2937]">{project.title}</span>
         </motion.nav>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12">
@@ -242,7 +242,7 @@ function ProjectHero({ project }) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-gray text-lg leading-relaxed max-w-2xl"
+              className="text-lg leading-relaxed max-w-2xl text-[#4B5563]"
             >
               {project.description}
             </motion.p>
@@ -289,13 +289,13 @@ function ProjectHero({ project }) {
               <div className="space-y-3">
                 <div className="flex items-center space-x-3 text-sm">
                   <FiUser className="text-primary shrink-0" size={16} />
-                  <span className="text-gray">Designer:</span>
+                  <span className="text-[#4B5563]">Designer:</span>
                   <span>Abdul Waheed</span>
                 </div>
                 {project.created_at && (
                   <div className="flex items-center space-x-3 text-sm">
                     <FiClock className="text-primary shrink-0" size={16} />
-                    <span className="text-gray">Date:</span>
+                    <span className="text-[#4B5563]">Date:</span>
                     <span>{formatDate(project.created_at)}</span>
                   </div>
                 )}
@@ -303,7 +303,7 @@ function ProjectHero({ project }) {
                   <div className="flex items-start space-x-3 text-sm">
                     <FiLayers className="text-primary shrink-0 mt-0.5" size={16} />
                     <div>
-                      <span className="text-gray">Software:</span>
+                      <span className="text-[#4B5563]">Software:</span>
                       <span className="ml-1">{project.software}</span>
                     </div>
                   </div>
@@ -311,7 +311,7 @@ function ProjectHero({ project }) {
                 {project.client && (
                   <div className="flex items-center space-x-3 text-sm">
                     <FiTag className="text-primary shrink-0" size={16} />
-                    <span className="text-gray">Client:</span>
+                    <span className="text-[#4B5563]">Client:</span>
                     <span>{project.client}</span>
                   </div>
                 )}
@@ -432,7 +432,7 @@ function CTASection() {
                 href={`https://wa.me/${whatsapp}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-3.5 bg-green-600/20 border border-green-500/30 text-green-400 font-semibold rounded-xl hover:bg-green-600/30 transition-all duration-300 flex items-center space-x-2"
+                className="px-8 py-3.5 bg-[#FFF2E8] border border-[#F47A20]/20 text-[#F47A20] font-semibold rounded-xl hover:bg-[#FFE7D0] transition-all duration-300 flex items-center space-x-2"
               >
                 <FaWhatsapp size={18} />
                 <span>WhatsApp</span>

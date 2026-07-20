@@ -34,24 +34,22 @@ export default function AdminSidebar() {
   const isActive = location.pathname
 
   return (
-    <div className="fixed left-0 top-0 bottom-0 w-64 bg-card border-r border-white/5 z-50 flex flex-col">
-      {/* Logo — fixed at top */}
-      <div className="p-6 flex-shrink-0">
+    <div className="fixed left-0 top-0 bottom-0 z-50 flex w-64 flex-col border-r border-[#EFE5DA] bg-[rgba(255,255,255,0.9)] backdrop-blur-xl">
+      <div className="flex-shrink-0 p-6">
         <Link to="/" className="text-2xl font-heading font-bold text-gradient">AW</Link>
       </div>
 
-      {/* Scrollable nav items — flex-1 fills remaining space */}
-      <nav className="flex-1 overflow-y-auto px-3 space-y-0.5 scrollbar-thin">
+      <nav className="flex-1 space-y-0.5 overflow-y-auto px-3 scrollbar-thin">
         {menuItems.map((item) => {
           const active = isActive === item.path
           return (
             <Link
               key={item.path}
               to={item.path}
-              className={`relative flex items-center space-x-3 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-150 w-full ${
+              className={`relative flex w-full items-center space-x-3 rounded-2xl px-4 py-2.5 text-sm font-medium transition-all duration-150 ${
                 active
-                  ? 'bg-gradient-primary/10 text-primary'
-                  : 'text-gray hover:text-white hover:bg-white/5'
+                  ? 'bg-[#FFF2E8] text-primary shadow-[0_12px_30px_-18px_rgba(244,122,32,0.6)]'
+                  : 'text-[#4B5563] hover:bg-[#FFF8F2] hover:text-[#1F1F1F]'
               }`}
             >
               {active && (
@@ -65,10 +63,10 @@ export default function AdminSidebar() {
       </nav>
 
       {/* Bottom section — always visible, never overlaps */}
-      <div className="flex-shrink-0 border-t border-white/5 p-3 space-y-1">
+      <div className="flex-shrink-0 border-t border-[#EFE5DA] p-3 space-y-1">
         <button
           onClick={handleLogout}
-          className="flex items-center space-x-3 px-4 py-2.5 rounded-xl text-sm font-medium text-gray hover:text-red-400 hover:bg-red-500/10 transition-all duration-150 w-full"
+          className="flex w-full items-center space-x-3 rounded-2xl px-4 py-2.5 text-sm font-medium text-[#4B5563] transition-all duration-150 hover:bg-[#FFF2E8] hover:text-red-500"
         >
           <FiLogOut size={18} />
           <span>Logout</span>

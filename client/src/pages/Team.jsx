@@ -33,7 +33,7 @@ export default function Team() {
               <h1 className="text-4xl md:text-6xl font-heading font-bold mt-4 mb-6">
                 The Creative <span className="text-gradient">Minds</span>
               </h1>
-              <p className="text-gray leading-relaxed">
+              <p className="leading-relaxed text-[#4B5563]">
                 Meet the talented people behind the designs. We're a team of passionate creatives
                 dedicated to bringing your vision to life.
               </p>
@@ -61,7 +61,7 @@ export default function Team() {
                     <h3 className="text-2xl font-heading font-bold mb-1">{member.name}</h3>
                     <p className="text-primary text-sm font-semibold mb-4">{member.role}</p>
                     {member.description && (
-                      <p className="text-gray text-sm leading-relaxed mb-6">{member.description}</p>
+                      <p className="mb-6 text-sm leading-relaxed text-[#4B5563]">{member.description}</p>
                     )}
                     {member.social_links && (
                       <div className="flex justify-center space-x-3">

@@ -28,12 +28,11 @@ export default function ProjectDetail() {
         <title>{project.title} | Abdul Waheed</title>
       </Helmet>
 
-      <section className="relative pt-32 pb-20">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Back Button */}
+      <section className="relative pb-20 pt-32">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <Link
             to="/projects"
-            className="inline-flex items-center space-x-2 text-gray hover:text-primary transition-colors mb-8"
+            className="mb-8 inline-flex items-center space-x-2 text-[#4B5563] transition-colors hover:text-primary"
           >
             <FiArrowLeft />
             <span>Back to Projects</span>
@@ -41,8 +40,8 @@ export default function ProjectDetail() {
 
           {/* Hero Image */}
           <SectionReveal>
-            <div className="relative rounded-2xl overflow-hidden mb-12 aspect-[21/9] bg-card">
-              <div className="absolute inset-0 flex items-center justify-center text-gray">
+            <div className="relative mb-12 aspect-[21/9] overflow-hidden rounded-[2rem] border border-[#EFE5DA] bg-white shadow-[0_24px_70px_-40px_rgba(31,31,31,0.35)]">
+              <div className="absolute inset-0 flex items-center justify-center text-[#4B5563]">
                 <div className="flex flex-col items-center space-y-2">
                   <FiImage size={40} />
                   <span className="text-sm">No image</span>
@@ -63,25 +62,25 @@ export default function ProjectDetail() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             <div className="lg:col-span-2">
               <SectionReveal>
-                <span className="text-primary text-sm font-semibold uppercase tracking-wider">
+                <span className="text-sm font-semibold uppercase tracking-[0.3em] text-primary">
                   {project.category}
                 </span>
-                <h1 className="text-4xl md:text-5xl font-heading font-bold mt-2 mb-6">{project.title}</h1>
-                <p className="text-gray leading-relaxed mb-6">{project.description}</p>
+                <h1 className="mt-2 mb-6 font-heading text-4xl font-bold text-[#1F1F1F] md:text-5xl">{project.title}</h1>
+                <p className="mb-6 text-lg leading-8 text-[#4B5563]">{project.description}</p>
               </SectionReveal>
 
               <SectionReveal delay={0.1}>
                 <div className="space-y-6">
                   {project.problem && (
                     <div>
-                      <h3 className="text-xl font-heading font-bold mb-2 text-primary">The Problem</h3>
-                      <p className="text-gray leading-relaxed">{project.problem}</p>
+                      <h3 className="mb-2 font-heading text-xl font-bold text-primary">The Problem</h3>
+                      <p className="leading-8 text-[#4B5563]">{project.problem}</p>
                     </div>
                   )}
                   {project.solution && (
                     <div>
-                      <h3 className="text-xl font-heading font-bold mb-2 text-primary">The Solution</h3>
-                      <p className="text-gray leading-relaxed">{project.solution}</p>
+                      <h3 className="mb-2 font-heading text-xl font-bold text-primary">The Solution</h3>
+                      <p className="leading-8 text-[#4B5563]">{project.solution}</p>
                     </div>
                   )}
                 </div>
@@ -90,7 +89,7 @@ export default function ProjectDetail() {
               {/* Project Images */}
               {project.project_images?.length > 0 && (
                 <SectionReveal delay={0.2}>
-                  <h3 className="text-2xl font-heading font-bold mt-12 mb-6">Gallery</h3>
+                  <h3 className="mt-12 mb-6 font-heading text-2xl font-bold text-[#1F1F1F]">Gallery</h3>
                   <div className="grid grid-cols-2 gap-4">
                     {project.project_images.map((img, i) => (
                       <motion.div
@@ -98,7 +97,7 @@ export default function ProjectDetail() {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: i * 0.1 }}
-                        className="rounded-xl overflow-hidden bg-card"
+                        className="overflow-hidden rounded-[1.25rem] border border-[#EFE5DA] bg-white"
                       >
                         <img src={img.url} alt={`${project.title} ${i + 1}`} className="w-full h-auto" loading="lazy" />
                       </motion.div>
@@ -112,20 +111,20 @@ export default function ProjectDetail() {
             <div>
               <SectionReveal delay={0.2}>
                 <div className="sticky top-28 space-y-6">
-                  <div className="p-6 rounded-2xl bg-card border border-white/5">
-                    <h3 className="font-heading font-bold mb-4">Project Details</h3>
+                  <div className="rounded-[1.5rem] border border-[#EFE5DA] bg-white/90 p-6 shadow-[0_24px_70px_-40px_rgba(31,31,31,0.3)]">
+                    <h3 className="mb-4 font-heading text-lg font-bold text-[#1F1F1F]">Project Details</h3>
                     <div className="space-y-4">
                       {project.client && (
                         <div className="flex items-center space-x-3 text-sm">
                           <FiUser className="text-primary" />
-                          <span className="text-gray">Client: </span>
+                          <span className="text-[#4B5563]">Client: </span>
                           <span>{project.client}</span>
                         </div>
                       )}
                       {project.duration && (
                         <div className="flex items-center space-x-3 text-sm">
                           <FiClock className="text-primary" />
-                          <span className="text-gray">Duration: </span>
+                          <span className="text-[#4B5563]">Duration: </span>
                           <span>{project.duration}</span>
                         </div>
                       )}
@@ -133,7 +132,7 @@ export default function ProjectDetail() {
                         <div className="flex items-start space-x-3 text-sm">
                           <FiLayers className="text-primary mt-0.5" />
                           <div>
-                            <span className="text-gray">Software: </span>
+                            <span className="text-[#4B5563]">Software: </span>
                             <span>{project.software}</span>
                           </div>
                         </div>
@@ -143,42 +142,42 @@ export default function ProjectDetail() {
 
                   {/* External Links */}
                   {(project.project_url || project.case_study_url || project.github_url) && (
-                    <div className="p-6 rounded-2xl bg-card border border-white/5">
-                      <h3 className="font-heading font-bold mb-4">Project Links</h3>
+                    <div className="rounded-[1.5rem] border border-[#EFE5DA] bg-white/90 p-6 shadow-[0_24px_70px_-40px_rgba(31,31,31,0.3)]">
+                      <h3 className="mb-4 font-heading text-lg font-bold text-[#1F1F1F]">Project Links</h3>
                       <div className="space-y-3">
                         {project.project_url && (
                           <a href={project.project_url} target="_blank" rel="noopener noreferrer"
-                            className="flex items-center space-x-3 w-full px-4 py-3 rounded-xl bg-gradient-primary/10 border border-primary/20 hover:bg-gradient-primary/20 transition-all duration-300 group">
+                            className="group flex w-full items-center space-x-3 rounded-2xl border border-primary/20 bg-[#FFF2E8] px-4 py-3 transition-all duration-300 hover:bg-[#FFE7D0]">
                             <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center flex-shrink-0">
                               <FiExternalLink className="text-background" size={16} />
                             </div>
                             <div className="flex-1 min-w-0">
-                              <p className="text-sm font-semibold text-white group-hover:text-primary transition-colors">Live Website</p>
-                              <p className="text-xs text-gray truncate">{project.project_url.replace(/^https?:\/\//, '')}</p>
+                              <p className="text-sm font-semibold text-[#1F1F1F] transition-colors group-hover:text-primary">Live Website</p>
+                              <p className="truncate text-xs text-[#4B5563]">{project.project_url.replace(/^https?:\/\//, '')}</p>
                             </div>
                           </a>
                         )}
                         {project.case_study_url && (
                           <a href={project.case_study_url} target="_blank" rel="noopener noreferrer"
-                            className="flex items-center space-x-3 w-full px-4 py-3 rounded-xl bg-blue-500/10 border border-blue-500/20 hover:bg-blue-500/20 transition-all duration-300 group">
-                            <div className="w-10 h-10 rounded-lg bg-blue-500 flex items-center justify-center flex-shrink-0">
-                              <FaBehance className="text-white" size={16} />
+                            className="group flex w-full items-center space-x-3 rounded-2xl border border-[#EFE5DA] bg-white px-4 py-3 transition-all duration-300 hover:border-primary/20 hover:bg-[#FFF2E8]">
+                            <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center flex-shrink-0">
+                              <FaBehance className="text-[#FFF8F2]" size={16} />
                             </div>
                             <div className="flex-1 min-w-0">
-                              <p className="text-sm font-semibold text-white group-hover:text-blue-400 transition-colors">Case Study</p>
-                              <p className="text-xs text-gray truncate">{project.case_study_url.replace(/^https?:\/\//, '')}</p>
+                              <p className="text-sm font-semibold text-[#1F1F1F] transition-colors group-hover:text-primary">Case Study</p>
+                              <p className="truncate text-xs text-[#4B5563]">{project.case_study_url.replace(/^https?:\/\//, '')}</p>
                             </div>
                           </a>
                         )}
                         {project.github_url && (
                           <a href={project.github_url} target="_blank" rel="noopener noreferrer"
-                            className="flex items-center space-x-3 w-full px-4 py-3 rounded-xl bg-gray-500/10 border border-gray-500/20 hover:bg-gray-500/20 transition-all duration-300 group">
+                            className="group flex w-full items-center space-x-3 rounded-2xl border border-[#EFE5DA] bg-white px-4 py-3 transition-all duration-300 hover:border-primary/20 hover:bg-[#FFF2E8]">
                             <div className="w-10 h-10 rounded-lg bg-gray-400 flex items-center justify-center flex-shrink-0">
                               <FiGithub className="text-background" size={16} />
                             </div>
                             <div className="flex-1 min-w-0">
-                              <p className="text-sm font-semibold text-white group-hover:text-gray-300 transition-colors">Repository</p>
-                              <p className="text-xs text-gray truncate">{project.github_url.replace(/^https?:\/\//, '')}</p>
+                              <p className="text-sm font-semibold text-[#1F1F1F] transition-colors group-hover:text-primary">Repository</p>
+                              <p className="truncate text-xs text-[#4B5563]">{project.github_url.replace(/^https?:\/\//, '')}</p>
                             </div>
                           </a>
                         )}
@@ -187,18 +186,18 @@ export default function ProjectDetail() {
                   )}
 
                   {project.before_after && (
-                    <div className="p-6 rounded-2xl bg-card border border-white/5">
-                      <h3 className="font-heading font-bold mb-4">Before / After</h3>
+                    <div className="rounded-[1.5rem] border border-[#EFE5DA] bg-white/90 p-6 shadow-[0_24px_70px_-40px_rgba(31,31,31,0.3)]">
+                      <h3 className="mb-4 font-heading text-lg font-bold text-[#1F1F1F]">Before / After</h3>
                       <div className="space-y-3">
                         {project.before_after.map((item, i) => (
                           <div key={i} className="grid grid-cols-2 gap-2">
                             <div className="rounded-lg overflow-hidden">
                               <img src={item.before} alt="Before" className="w-full" loading="lazy" />
-                              <p className="text-xs text-gray text-center mt-1">Before</p>
+                              <p className="mt-1 text-center text-xs text-[#4B5563]">Before</p>
                             </div>
                             <div className="rounded-lg overflow-hidden">
                               <img src={item.after} alt="After" className="w-full" loading="lazy" />
-                              <p className="text-xs text-gray text-center mt-1">After</p>
+                              <p className="mt-1 text-center text-xs text-[#4B5563]">After</p>
                             </div>
                           </div>
                         ))}

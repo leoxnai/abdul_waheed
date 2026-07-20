@@ -100,7 +100,7 @@ export default function AdminSettings() {
   return (
     <div>
       <h2 className="text-2xl font-heading font-bold mb-8">Site Settings</h2>
-      <p className="text-gray text-sm mb-6">These values appear across your website — footer, contact page, homepage sections, and copyright.</p>
+      <p className="text-sm mb-6 text-[#4B5563]">These values appear across your website — footer, contact page, homepage sections, and copyright.</p>
 
       <form onSubmit={handleSave} className="max-w-2xl space-y-6">
         {/* Brand */}
@@ -108,16 +108,16 @@ export default function AdminSettings() {
           <h3 className="text-lg font-heading font-semibold mb-4 text-primary">Brand</h3>
           <div className="space-y-4">
             <div>
-              <label className="block text-xs text-gray mb-1">Site Name</label>
-              <input value={form.site_name} onChange={(e) => setForm({ ...form, site_name: e.target.value })} className="w-full px-4 py-3 bg-background border border-white/10 rounded-xl text-white" />
+              <label className="block text-xs text-[#4B5563] mb-1">Site Name</label>
+              <input value={form.site_name} onChange={(e) => setForm({ ...form, site_name: e.target.value })} className="w-full px-4 py-3 bg-background border border-white/10 rounded-xl text-[#1F2937]" />
             </div>
             <div>
-              <label className="block text-xs text-gray mb-1">Site Description / Footer Bio</label>
-              <textarea value={form.site_description} onChange={(e) => setForm({ ...form, site_description: e.target.value })} rows={3} className="w-full px-4 py-3 bg-background border border-white/10 rounded-xl text-white resize-none" />
+              <label className="block text-xs text-[#4B5563] mb-1">Site Description / Footer Bio</label>
+              <textarea value={form.site_description} onChange={(e) => setForm({ ...form, site_description: e.target.value })} rows={3} className="w-full px-4 py-3 bg-background border border-white/10 rounded-xl text-[#1F2937] resize-none" />
             </div>
             <div>
-              <label className="block text-xs text-gray mb-1">Copyright Text</label>
-              <input value={form.copyright_text} onChange={(e) => setForm({ ...form, copyright_text: e.target.value })} className="w-full px-4 py-3 bg-background border border-white/10 rounded-xl text-white" />
+              <label className="block text-xs text-[#4B5563] mb-1">Copyright Text</label>
+              <input value={form.copyright_text} onChange={(e) => setForm({ ...form, copyright_text: e.target.value })} className="w-full px-4 py-3 bg-background border border-white/10 rounded-xl text-[#1F2937]" />
             </div>
           </div>
         </div>
@@ -127,12 +127,12 @@ export default function AdminSettings() {
           <h3 className="text-lg font-heading font-semibold mb-4 text-primary">Logo</h3>
           <div className="space-y-4">
             <div>
-              <label className="block text-xs text-gray mb-1">Logo Text (shown if no image)</label>
-              <input value={form.logo_text} onChange={(e) => setForm({ ...form, logo_text: e.target.value })} className="w-full px-4 py-3 bg-background border border-white/10 rounded-xl text-white" />
+              <label className="block text-xs text-[#4B5563] mb-1">Logo Text (shown if no image)</label>
+              <input value={form.logo_text} onChange={(e) => setForm({ ...form, logo_text: e.target.value })} className="w-full px-4 py-3 bg-background border border-white/10 rounded-xl text-[#1F2937]" />
             </div>
             <div>
-              <label className="block text-xs text-gray mb-1">Logo Image URL (overrides text)</label>
-              <input value={form.logo_image_url} onChange={(e) => setForm({ ...form, logo_image_url: e.target.value })} placeholder="https://..." className="w-full px-4 py-3 bg-background border border-white/10 rounded-xl text-white" />
+              <label className="block text-xs text-[#4B5563] mb-1">Logo Image URL (overrides text)</label>
+              <input value={form.logo_image_url} onChange={(e) => setForm({ ...form, logo_image_url: e.target.value })} placeholder="https://..." className="w-full px-4 py-3 bg-background border border-white/10 rounded-xl text-[#1F2937]" />
               {form.logo_image_url && <img src={form.logo_image_url} alt="logo preview" className="mt-2 h-10 w-auto" />}
             </div>
           </div>
@@ -143,20 +143,20 @@ export default function AdminSettings() {
           <h3 className="text-lg font-heading font-semibold mb-4 text-primary">Contact Information</h3>
           <div className="space-y-4">
             <div>
-              <label className="block text-xs text-gray mb-1">Contact Email</label>
-              <input value={form.contact_email} onChange={(e) => setForm({ ...form, contact_email: e.target.value })} type="email" className="w-full px-4 py-3 bg-background border border-white/10 rounded-xl text-white" />
+              <label className="block text-xs text-[#4B5563] mb-1">Contact Email</label>
+              <input value={form.contact_email} onChange={(e) => setForm({ ...form, contact_email: e.target.value })} type="email" className="w-full px-4 py-3 bg-background border border-white/10 rounded-xl text-[#1F2937]" />
             </div>
             <div>
-              <label className="block text-xs text-gray mb-1">Phone</label>
-              <input value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="w-full px-4 py-3 bg-background border border-white/10 rounded-xl text-white" />
+              <label className="block text-xs text-[#4B5563] mb-1">Phone</label>
+              <input value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} className="w-full px-4 py-3 bg-background border border-white/10 rounded-xl text-[#1F2937]" />
             </div>
             <div>
-              <label className="block text-xs text-gray mb-1">Address</label>
-              <input value={form.address} onChange={(e) => setForm({ ...form, address: e.target.value })} className="w-full px-4 py-3 bg-background border border-white/10 rounded-xl text-white" />
+              <label className="block text-xs text-[#4B5563] mb-1">Address</label>
+              <input value={form.address} onChange={(e) => setForm({ ...form, address: e.target.value })} className="w-full px-4 py-3 bg-background border border-white/10 rounded-xl text-[#1F2937]" />
             </div>
             <div>
-              <label className="block text-xs text-gray mb-1">WhatsApp Number</label>
-              <input value={form.whatsapp} onChange={(e) => setForm({ ...form, whatsapp: e.target.value })} className="w-full px-4 py-3 bg-background border border-white/10 rounded-xl text-white" />
+              <label className="block text-xs text-[#4B5563] mb-1">WhatsApp Number</label>
+              <input value={form.whatsapp} onChange={(e) => setForm({ ...form, whatsapp: e.target.value })} className="w-full px-4 py-3 bg-background border border-white/10 rounded-xl text-[#1F2937]" />
             </div>
           </div>
         </div>
@@ -167,8 +167,8 @@ export default function AdminSettings() {
           <div className="space-y-4">
             {sectionTitleFields.map((key) => (
               <div key={key}>
-                <label className="block text-xs text-gray capitalize mb-1">{key.replace(/_/g, ' ')}</label>
-                <input value={titles[key] || ''} onChange={(e) => updateSectionTitle(key, e.target.value)} className="w-full px-4 py-3 bg-background border border-white/10 rounded-xl text-white" />
+                <label className="block text-xs text-[#4B5563] capitalize mb-1">{key.replace(/_/g, ' ')}</label>
+                <input value={titles[key] || ''} onChange={(e) => updateSectionTitle(key, e.target.value)} className="w-full px-4 py-3 bg-background border border-white/10 rounded-xl text-[#1F2937]" />
               </div>
             ))}
           </div>

@@ -38,7 +38,7 @@ export default function FloatingButtons() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.8 }}
             onClick={scrollToTop}
-            className="w-12 h-12 rounded-full bg-card border border-white/10 flex items-center justify-center text-white hover:border-primary hover:text-primary transition-all duration-300 shadow-lg flex-shrink-0"
+            className="w-12 h-12 rounded-full bg-card border border-white/10 flex items-center justify-center text-[#1F2937] hover:border-primary hover:text-primary transition-all duration-300 shadow-lg flex-shrink-0"
             aria-label="Scroll to top"
           >
             <HiArrowUp size={20} />
@@ -60,7 +60,7 @@ export default function FloatingButtons() {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         onClick={openWhatsApp}
-        className="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center text-white shadow-lg hover:shadow-xl transition-all duration-300 flex-shrink-0"
+        className="w-12 h-12 rounded-full bg-[#25D366] flex items-center justify-center text-white shadow-[0_10px_24px_-12px_rgba(37,211,102,0.75)] hover:bg-[#1EBE5D] hover:shadow-[0_12px_28px_-12px_rgba(30,190,93,0.8)] transition-all duration-300 flex-shrink-0"
         aria-label="Contact via WhatsApp"
       >
         <FaWhatsapp size={20} />

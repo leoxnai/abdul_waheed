@@ -142,7 +142,7 @@ export default function AdminSocialLinks() {
             <button
               onClick={() => toggleActive(link)}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition-all ${
-                link.active ? 'bg-green-500/10 text-green-400' : 'bg-white/5 text-gray'
+                link.active ? 'bg-[#FFF2E8] text-[#F47A20]' : 'bg-[#FFF8F2] text-[#6B7280]'
               }`}
             >
               {link.active ? 'Active' : 'Inactive'}

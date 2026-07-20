@@ -13,7 +13,7 @@ export default function MainLayout() {
   if (loading) return <LoadingScreen />
 
   return (
-    <div className="min-h-screen bg-background text-white">
+    <div className="min-h-screen bg-background text-[#1F2937]">
       <CursorEffect />
       <Navbar />
       <main>

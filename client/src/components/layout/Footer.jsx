@@ -53,7 +53,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="relative bg-card border-t border-white/5 overflow-hidden">
+    <footer className="relative overflow-hidden border-t border-[#EFE5DA] bg-[linear-gradient(180deg,#FFF8F2_0%,#FFF2E8_100%)]">
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand — bio text from settings */}
@@ -61,7 +61,7 @@ export default function Footer() {
             <Link to="/" className="text-3xl font-heading font-bold text-gradient">
               AW
             </Link>
-            <p className="text-gray text-sm leading-relaxed">
+            <p className="text-sm leading-7 text-[#4B5563]">
               {siteSettings?.site_description || 'Creating premium visual experiences that elevate brands and leave lasting impressions.'}
             </p>
             <div className="flex space-x-3">
@@ -73,7 +73,7 @@ export default function Footer() {
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray hover:bg-primary hover:text-background transition-all duration-300"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-[#EFE5DA] bg-white/80 text-[#4B5563] transition-all duration-300 hover:border-primary/30 hover:bg-primary hover:text-[#FFF8F2]"
                     title={link.platform}
                   >
                     <Icon size={16} />
@@ -85,13 +85,13 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-heading font-semibold mb-6">Quick Links</h3>
+            <h3 className="mb-6 text-lg font-heading font-semibold text-[#1F1F1F]">Quick Links</h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-gray hover:text-primary transition-colors duration-300 text-sm"
+                    className="text-sm text-[#4B5563] transition-colors duration-300 hover:text-primary"
                   >
                     {link.name}
                   </Link>
@@ -102,18 +102,18 @@ export default function Footer() {
 
           {/* Contact — values from siteSettings */}
           <div>
-            <h3 className="text-lg font-heading font-semibold mb-6">Contact</h3>
+            <h3 className="mb-6 text-lg font-heading font-semibold text-[#1F1F1F]">Contact</h3>
             <ul className="space-y-4">
-              <li className="flex items-start space-x-3 text-sm text-gray">
-                <FiMail className="mt-0.5 text-primary flex-shrink-0" size={16} />
+              <li className="flex items-start space-x-3 text-sm text-[#4B5563]">
+                <FiMail className="mt-0.5 flex-shrink-0 text-primary" size={16} />
                 <span>{siteSettings?.contact_email || 'abdulwaheedgraphics097@gmail.com'}</span>
               </li>
-              <li className="flex items-start space-x-3 text-sm text-gray">
-                <FiPhone className="mt-0.5 text-primary flex-shrink-0" size={16} />
+              <li className="flex items-start space-x-3 text-sm text-[#4B5563]">
+                <FiPhone className="mt-0.5 flex-shrink-0 text-primary" size={16} />
                 <span>{siteSettings?.phone || '+92 329 1966097'}</span>
               </li>
-              <li className="flex items-start space-x-3 text-sm text-gray">
-                <FiMapPin className="mt-0.5 text-primary flex-shrink-0" size={16} />
+              <li className="flex items-start space-x-3 text-sm text-[#4B5563]">
+                <FiMapPin className="mt-0.5 flex-shrink-0 text-primary" size={16} />
                 <span>{siteSettings?.address || 'Lahore, Pakistan'}</span>
               </li>
             </ul>
@@ -121,8 +121,8 @@ export default function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h3 className="text-lg font-heading font-semibold mb-6">Newsletter</h3>
-            <p className="text-gray text-sm mb-4">
+            <h3 className="mb-6 text-lg font-heading font-semibold text-[#1F1F1F]">Newsletter</h3>
+            <p className="mb-4 text-sm text-[#4B5563]">
               Subscribe for design insights and updates.
             </p>
             <form onSubmit={handleSubscribe} className="space-y-3">
@@ -132,14 +132,14 @@ export default function Footer() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="your@email.com"
-                  className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white text-sm focus:outline-none focus:border-primary transition-colors placeholder:text-gray/50"
+                  className="w-full rounded-xl border border-[#EFE5DA] bg-white/80 px-4 py-3 text-sm text-[#1F1F1F] placeholder:text-[#9CA3AF] focus:border-primary focus:outline-none"
                   required
                 />
               </div>
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="w-full px-4 py-3 bg-gradient-primary text-background font-semibold rounded-xl text-sm hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 disabled:opacity-50"
+                className="w-full rounded-xl bg-gradient-primary px-4 py-3 text-sm font-semibold text-[#FFF8F2] shadow-[0_16px_44px_-20px_rgba(244,122,32,0.75)] transition-all duration-300 disabled:opacity-50"
               >
                 {status === 'loading' ? 'Subscribing...' : 'Subscribe'}
               </button>
@@ -154,13 +154,13 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-gray text-sm">
+        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-[#EFE5DA] pt-8 sm:flex-row">
+          <p className="text-sm text-[#4B5563]">
             {siteSettings?.copyright_text || `© ${new Date().getFullYear()} ${siteSettings?.site_name || 'Abdul Waheed'}. All rights reserved.`}
           </p>
           <button
             onClick={scrollToTop}
-            className="group flex items-center space-x-2 text-gray hover:text-primary transition-colors duration-300"
+            className="group flex items-center space-x-2 text-[#4B5563] transition-colors duration-300 hover:text-primary"
           >
             <span className="text-sm">Back to top</span>
             <motion.span
@@ -173,10 +173,10 @@ export default function Footer() {
         </div>
 
         {/* Developer Credit */}
-        <div className="mt-4 pt-4 border-t border-white/[0.03] flex items-center justify-center">
-          <p className="text-xs text-gray/40 hover:text-gray/60 transition-colors duration-300 text-center">
-            Crafted with precision by <a href="https://anssol.com" target="_blank" rel="noopener noreferrer" className="text-gray/50 hover:text-primary transition-colors">anssol.com</a> — Developer{' '}
-            <a href="https://wa.me/923102850365" target="_blank" rel="noopener noreferrer" className="text-gray/50 hover:text-primary transition-colors">Ali Hassan</a>
+        <div className="mt-4 flex items-center justify-center border-t border-[#EFE5DA]/80 pt-4">
+          <p className="text-center text-xs text-[#9CA3AF] transition-colors duration-300 hover:text-[#4B5563]">
+            Crafted with precision by <a href="https://anssol.com" target="_blank" rel="noopener noreferrer" className="text-[#6B7280] hover:text-primary">anssol.com</a> — Developer{' '}
+            <a href="https://wa.me/923102850365" target="_blank" rel="noopener noreferrer" className="text-[#6B7280] hover:text-primary">Ali Hassan</a>
           </p>
         </div>
       </div>

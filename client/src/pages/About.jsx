@@ -33,10 +33,10 @@ export default function About() {
                 <h1 className="text-4xl md:text-6xl font-heading font-bold mt-4 mb-6">
                   The Story Behind the <span className="text-gradient">Design</span>
                 </h1>
-                <p className="text-gray leading-relaxed mb-6">
+                <p className="leading-relaxed mb-6 text-[#4B5563]">
                   {aboutData?.bio?.split('\n')[0] || "I'm a passionate graphic designer with over 8 years of experience creating visual identities that resonate. My approach combines strategic thinking with creative execution to deliver designs that not only look beautiful but achieve real results."}
                 </p>
-                <p className="text-gray leading-relaxed mb-8">
+                <p className="leading-relaxed mb-8 text-[#4B5563]">
                   {aboutData?.bio?.split('\n')[1] || "Specializing in brand identity, logo design, and visual communication, I've had the privilege of working with 200+ clients worldwide, from startups to established enterprises."}
                 </p>
                 {aboutData?.cv_url && (
@@ -82,7 +82,7 @@ export default function About() {
               >
                 <FiTarget className="text-primary text-3xl mb-4" />
                 <h3 className="text-2xl font-heading font-bold mb-3">My Mission</h3>
-                <p className="text-gray leading-relaxed">
+                <p className="leading-relaxed text-[#4B5563]">
                   {aboutData?.mission || 'To empower brands with compelling visual identities that communicate their unique story and connect with their audience on a deeper level.'}
                 </p>
               </motion.div>
@@ -95,7 +95,7 @@ export default function About() {
               >
                 <FiEye className="text-primary text-3xl mb-4" />
                 <h3 className="text-2xl font-heading font-bold mb-3">My Vision</h3>
-                <p className="text-gray leading-relaxed">
+                <p className="leading-relaxed text-[#4B5563]">
                   {aboutData?.vision || 'To be the most sought-after design studio known for creating iconic brands that shape industries and inspire the next generation of designers.'}
                 </p>
               </motion.div>
@@ -116,7 +116,7 @@ export default function About() {
                   className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
                     activeTab === tab
                       ? 'bg-gradient-primary text-background'
-                      : 'bg-white/5 text-gray hover:text-white border border-white/10'
+                      : 'bg-white/5 text-[#4B5563] hover:text-[#1F2937] border border-[#EFE5DA]'
                   }`}
                 >
                   {tab.charAt(0).toUpperCase() + tab.slice(1)}
@@ -137,7 +137,7 @@ export default function About() {
                       <div className="flex-1 p-6 rounded-2xl bg-card border border-white/5 ml-8 md:ml-0">
                         <span className="text-primary font-bold text-sm">{item.year}</span>
                         <h3 className="text-lg font-heading font-bold mt-1">{item.event}</h3>
-                        <p className="text-gray text-sm mt-2">{item.desc}</p>
+                        <p className="mt-2 text-sm text-[#4B5563]">{item.desc}</p>
                       </div>
                     </div>
                   </SectionReveal>
@@ -171,7 +171,7 @@ export default function About() {
                         className="h-full bg-gradient-primary rounded-full"
                       />
                     </div>
-                    <span className="text-gray text-xs mt-1 block">{skill.level || 80}%</span>
+                    <span className="mt-1 block text-xs text-[#6B7280]">{skill.level || 80}%</span>
                   </motion.div>
                 </SectionReveal>
               ))}
@@ -189,7 +189,7 @@ export default function About() {
                   <div className="p-6 rounded-2xl bg-card border border-white/5">
                     <span className="text-primary text-sm font-semibold">{edu.year}</span>
                     <h3 className="text-xl font-heading font-bold mt-1">{edu.degree}</h3>
-                    <p className="text-gray text-sm mt-1">{edu.school}</p>
+                    <p className="mt-1 text-sm text-[#4B5563]">{edu.school}</p>
                   </div>
                 </SectionReveal>
               ))}

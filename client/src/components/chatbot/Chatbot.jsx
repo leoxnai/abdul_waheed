@@ -42,7 +42,7 @@ function ChatMarkdown({ content }) {
         ul: ({ children }) => <ul className="list-disc pl-4 space-y-1 my-1">{children}</ul>,
         ol: ({ children }) => <ol className="list-decimal pl-4 space-y-1 my-1">{children}</ol>,
         li: ({ children }) => <li className="text-sm">{children}</li>,
-        strong: ({ children }) => <strong className="font-semibold text-white">{children}</strong>,
+        strong: ({ children }) => <strong className="font-semibold text-[#1F2937]">{children}</strong>,
         code: ({ children }) => (
           <code className="px-1.5 py-0.5 rounded bg-white/5 text-xs font-mono">{children}</code>
         ),
@@ -101,32 +101,34 @@ export default function Chatbot() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 100, scale: 0.9 }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-            className="fixed bottom-28 left-4 right-4 sm:left-auto sm:right-6 sm:w-96 z-50 h-[400px] sm:h-[500px] rounded-2xl overflow-hidden shadow-2xl"
+            className="fixed bottom-28 left-4 right-4 z-50 h-[420px] overflow-hidden rounded-[1.75rem] border border-[#EFE5DA] bg-[rgba(255,255,255,0.95)] shadow-[0_30px_90px_-40px_rgba(31,31,31,0.35)] sm:left-auto sm:right-6 sm:h-[520px] sm:w-[400px]"
           >
-            <div className="flex flex-col h-full bg-card border border-white/10 backdrop-blur-xl">
+            <div className="flex h-full flex-col backdrop-blur-xl">
               {/* Header */}
-              <div className="flex items-center justify-between p-4 bg-gradient-primary">
+              <div className="flex items-center justify-between bg-gradient-primary p-4">
                 <div className="flex items-center space-x-3">
-                  <FaRobot className="text-background text-lg" />
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20">
+                    <FaRobot className="text-[#FFF8F2] text-lg" />
+                  </div>
                   <div>
-                    <p className="text-background font-bold text-sm">AI Assistant</p>
-                    <p className="text-background/70 text-xs">Online</p>
+                    <p className="text-sm font-bold text-[#FFF8F2]">AI Assistant</p>
+                    <p className="text-xs text-[#FFF8F2]/80">Online</p>
                   </div>
                 </div>
-                <button onClick={() => setIsOpen(false)} className="text-background/80 hover:text-background transition-colors">
+                <button onClick={() => setIsOpen(false)} className="text-[#FFF8F2]/80 transition-colors hover:text-[#FFF8F2]">
                   <FaTimes />
                 </button>
               </div>
 
               {/* Messages */}
-              <div className="flex-1 overflow-y-auto p-4 space-y-4">
+              <div className="flex-1 space-y-4 overflow-y-auto bg-[#FFF8F2]/70 p-4">
                 {messages.map((msg, i) => (
                   <div key={i} className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                     <div
-                      className={`max-w-[85%] p-3 rounded-2xl text-sm ${
+                      className={`max-w-[85%] rounded-[1.2rem] p-3 text-sm ${
                         msg.role === 'user'
-                          ? 'bg-primary text-background rounded-br-sm'
-                          : 'bg-white/5 text-white rounded-bl-sm'
+                          ? 'rounded-br-sm bg-primary text-[#FFF8F2]'
+                          : 'rounded-bl-sm bg-white text-[#1F1F1F] shadow-[0_12px_30px_-20px_rgba(31,31,31,0.3)]'
                       }`}
                       style={{ wordBreak: 'break-word', overflowWrap: 'anywhere' }}
                     >
@@ -140,7 +142,7 @@ export default function Chatbot() {
                 ))}
                 {isLoading && (
                   <div className="flex justify-start">
-                    <div className="bg-white/5 p-3 rounded-2xl rounded-bl-sm">
+                    <div className="rounded-[1.2rem] rounded-bl-sm bg-white p-3 shadow-[0_12px_30px_-20px_rgba(31,31,31,0.3)]">
                       <FaSpinner className="animate-spin text-primary" />
                     </div>
                   </div>
@@ -154,7 +156,7 @@ export default function Chatbot() {
                   <div className="flex flex-wrap gap-2">
                     {quickReplies.map((reply) => (
                       <button key={reply} onClick={() => handleSend(reply)}
-                        className="text-xs px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-gray hover:text-white hover:border-primary/50 transition-all duration-300">
+                        className="rounded-full border border-[#EFE5DA] bg-white px-3 py-1.5 text-xs text-[#4B5563] transition-all duration-300 hover:border-primary/40 hover:text-primary">
                         {reply}
                       </button>
                     ))}
@@ -163,14 +165,14 @@ export default function Chatbot() {
               )}
 
               {/* Input */}
-              <div className="p-4 border-t border-white/5">
+              <div className="border-t border-[#EFE5DA] p-4">
                 <div className="flex space-x-2">
                   <input type="text" value={input} onChange={(e) => setInput(e.target.value)}
                     onKeyDown={(e) => e.key === 'Enter' && handleSend()}
                     placeholder="Type a message..."
-                    className="flex-1 px-4 py-2.5 bg-white/5 border border-white/10 rounded-xl text-white text-sm focus:outline-none focus:border-primary transition-colors placeholder:text-gray/50" />
+                    className="flex-1 rounded-xl border border-[#EFE5DA] bg-white px-4 py-2.5 text-sm text-[#1F1F1F] placeholder:text-[#9CA3AF] focus:border-primary focus:outline-none" />
                   <button onClick={() => handleSend()} disabled={isLoading}
-                    className="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center text-background hover:shadow-lg transition-all duration-300 disabled:opacity-50">
+                    className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-primary text-[#FFF8F2] transition-all duration-300 hover:shadow-lg disabled:opacity-50">
                     <FaPaperPlane size={14} />
                   </button>
                 </div>

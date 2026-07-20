@@ -46,7 +46,7 @@ export default function AdminLogin() {
         <div className="text-center mb-8">
           <h1 className="text-4xl font-heading font-bold text-gradient">AW</h1>
           <h2 className="text-2xl font-heading font-bold mt-4">Admin Login</h2>
-          <p className="text-gray text-sm mt-2">Sign in to manage your portfolio</p>
+          <p className="text-sm mt-2 text-[#4B5563]">Sign in to manage your portfolio</p>
         </div>
 
         <form onSubmit={handleLogin} className="space-y-4">

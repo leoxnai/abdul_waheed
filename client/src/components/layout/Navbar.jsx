@@ -37,13 +37,12 @@ export default function Navbar() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled
-            ? 'bg-background/80 backdrop-blur-xl border-b border-white/5'
+            ? 'bg-[rgba(255,248,242,0.86)] backdrop-blur-xl border-b border-[#EFE5DA] shadow-[0_8px_30px_-24px_rgba(31,31,31,0.45)]'
             : 'bg-transparent'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-14 md:h-16">
-            {/* Logo */}
             <Link to="/" className="relative group flex-shrink-0">
               {logoImage ? (
                 <img src={logoImage} alt={logoText} className="h-8 md:h-10 w-auto" />
@@ -54,23 +53,20 @@ export default function Navbar() {
               )}
             </Link>
 
-            {/* Desktop Menu */}
             <div className="hidden lg:flex items-center space-x-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`relative px-3 py-1.5 text-sm font-medium transition-colors duration-300 whitespace-nowrap ${
-                    activeSection === link.path
-                      ? 'text-primary'
-                      : 'text-gray hover:text-white'
+                  className={`relative px-3 py-1.5 text-sm font-semibold transition-colors duration-300 whitespace-nowrap ${
+                    activeSection === link.path ? 'text-primary' : 'text-[#374151] hover:text-[#EA6A00]'
                   }`}
                 >
                   {link.name}
                   {activeSection === link.path && (
                     <motion.div
                       layoutId="nav-indicator"
-                      className="absolute bottom-0 left-2 right-2 h-0.5 bg-gradient-primary"
+                      className="absolute bottom-0 left-2 right-2 h-0.5 rounded-full bg-gradient-primary"
                       transition={{ type: 'spring', bounce: 0.25, duration: 0.5 }}
                     />
                   )}
@@ -78,16 +74,15 @@ export default function Navbar() {
               ))}
               <Link
                 to="/contact"
-                className="ml-3 px-5 py-2 bg-gradient-primary text-background font-semibold rounded-full text-sm hover:shadow-lg hover:shadow-primary/30 transition-all duration-300 whitespace-nowrap"
+                className="ml-3 px-5 py-2 bg-gradient-primary text-[#FFF8F2] font-semibold rounded-full text-sm shadow-[0_10px_30px_-16px_rgba(244,122,32,0.55)] transition-all duration-300 whitespace-nowrap"
               >
                 Hire Me
               </Link>
             </div>
 
-            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="lg:hidden relative w-10 h-10 flex items-center justify-center text-white flex-shrink-0"
+              className="lg:hidden relative w-10 h-10 flex items-center justify-center text-[#1F1F1F] flex-shrink-0 rounded-full border border-[#EFE5DA] bg-white/70 backdrop-blur"
               aria-label="Toggle menu"
             >
               {isOpen ? <HiX size={24} /> : <HiMenu size={24} />}
@@ -96,7 +91,6 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -104,7 +98,7 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-40 bg-background/95 backdrop-blur-xl lg:hidden"
+            className="fixed inset-0 z-40 bg-[rgba(255,248,242,0.97)] backdrop-blur-xl lg:hidden"
           >
             <div className="flex flex-col items-center justify-center h-full space-y-8">
               {navLinks.map((link, i) => (
@@ -117,9 +111,7 @@ export default function Navbar() {
                   <Link
                     to={link.path}
                     className={`text-3xl font-heading font-bold transition-colors duration-300 ${
-                      activeSection === link.path
-                        ? 'text-gradient'
-                        : 'text-white/70 hover:text-white'
+                      activeSection === link.path ? 'text-primary' : 'text-[#374151] hover:text-[#EA6A00]'
                     }`}
                   >
                     {link.name}
@@ -133,7 +125,7 @@ export default function Navbar() {
               >
                 <Link
                   to="/contact"
-                  className="px-8 py-3 bg-gradient-primary text-background font-bold rounded-full text-lg"
+                  className="px-8 py-3 bg-gradient-primary text-[#FFF8F2] font-bold rounded-full text-lg"
                 >
                   Hire Me
                 </Link>

@@ -44,8 +44,8 @@ export default function Toast() {
             exit={{ opacity: 0, x: 100, scale: 0.9 }}
             className={`pointer-events-auto flex items-center space-x-3 px-5 py-3 rounded-xl shadow-xl border ${
               toast.type === 'success'
-                ? 'bg-green-500/10 border-green-500/20 text-green-400'
-                : 'bg-red-500/10 border-red-500/20 text-red-400'
+                ? 'bg-[#FFF2E8] border-[#F47A20]/20 text-[#F47A20]'
+                : 'bg-[#FFF8F2] border-[#EFE5DA] text-[#6B7280]'
             } backdrop-blur-xl`}
           >
             {toast.type === 'success' ? (

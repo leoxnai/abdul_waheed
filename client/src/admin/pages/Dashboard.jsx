@@ -31,10 +31,10 @@ export default function AdminDashboard() {
   }
 
   const statCards = [
-    { label: 'Total Projects', value: stats.projects, icon: FiFolder, color: 'from-blue-500 to-cyan-500' },
-    { label: 'Services', value: stats.services, icon: FiTrendingUp, color: 'from-green-500 to-emerald-500' },
-    { label: 'Messages', value: stats.messages, icon: FiMessageSquare, color: 'from-purple-500 to-pink-500' },
-    { label: 'Subscribers', value: stats.subscribers, icon: FiMail, color: 'from-orange-500 to-red-500' },
+    { label: 'Total Projects', value: stats.projects, icon: FiFolder, color: 'from-[#F47A20] to-[#FF9A3D]' },
+    { label: 'Services', value: stats.services, icon: FiTrendingUp, color: 'from-[#FF9A3D] to-[#F47A20]' },
+    { label: 'Messages', value: stats.messages, icon: FiMessageSquare, color: 'from-[#F47A20] to-[#FFE7D0]' },
+    { label: 'Subscribers', value: stats.subscribers, icon: FiMail, color: 'from-[#FF9A3D] to-[#FFF2E8]' },
   ]
 
   return (
@@ -56,7 +56,7 @@ export default function AdminDashboard() {
               </div>
             </div>
             <p className="text-3xl font-heading font-bold">{card.value}</p>
-            <p className="text-gray text-sm mt-1">{card.label}</p>
+            <p className="text-sm mt-1 text-[#4B5563]">{card.label}</p>
           </motion.div>
         ))}
       </div>
@@ -85,7 +85,7 @@ export default function AdminDashboard() {
 
         <div className="p-6 rounded-2xl bg-card border border-white/5">
           <h3 className="text-lg font-heading font-bold mb-4">Recent Activity</h3>
-          <p className="text-gray text-sm">No recent activity to show.</p>
+          <p className="text-sm text-[#4B5563]">No recent activity to show.</p>
         </div>
       </div>
     </div>
